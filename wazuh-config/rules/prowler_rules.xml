@@ -1,0 +1,23 @@
+<group name="local,prowler,">
+
+  <!-- Prowler FAIL finding based on Amazon Security Lake OCSF JSON -->
+  <rule id="110005" level="9">
+    <!-- Only run on events already tagged as Amazon Security Lake -->
+    <if_group>amazon_security_lake</if_group>
+
+    <!-- Make sure this is a Prowler finding -->
+    <field name="metadata.product.name">Prowler</field>
+
+    <!-- Only alert on FAILED checks -->
+    <field name="status_code">FAIL</field>
+
+    <description>
+      [Prowler FAIL] $(metadata.event_code)
+      (account $(cloud.account.uid) region $(cloud.region))
+    </description>
+
+    <group>prowler,aws,cloud</group>
+  </rule>
+
+</group>
+

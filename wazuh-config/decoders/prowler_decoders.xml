@@ -1,0 +1,21 @@
+<!-- Decoders for Prowler OCSF events -->
+
+<!-- Base decoder: match any event that clearly contains Prowler product info -->
+<decoder name="prowler_ocsf_base">
+  <prematch>"product":{"name":"Prowler"</prematch>
+</decoder>
+
+<!-- Extract status_code -> prowler_status -->
+<decoder name="prowler_ocsf_status">
+  <parent>prowler_ocsf_base</parent>
+  <regex>"status_code":"([^"]+)"</regex>
+  <order>prowler_status</order>
+</decoder>
+
+<!-- Extract metadata.event_code -> prowler_event_code -->
+<decoder name="prowler_ocsf_event">
+  <parent>prowler_ocsf_base</parent>
+  <regex>"event_code":"([^"]+)"</regex>
+  <order>prowler_event_code</order>
+</decoder>
+
