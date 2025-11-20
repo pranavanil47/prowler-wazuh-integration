@@ -1,0 +1,14 @@
+{
+  "attributes": {
+    "title": "Prowler Findings by Severity",
+    "type": "pie",
+    "params": {},
+    "aggs": [
+      {
+        "id": "1",
+        "type": "terms",
+        "params": { "field": "severity.keyword", "size": 10 }
+      }
+    ]
+  }
+}
