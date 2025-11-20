@@ -31,12 +31,10 @@ prowler-wazuh-integration/
 │   └── rules/
 │       └── prowler_rules.xml          # Alerts Wazuh on Prowler findings
 │
-├── integrations/
-│   └── custom-iris                    # Wazuh → DFIR-IRIS integration
+├── iris-integrations/
+│   └── custom-iris.py                   # Wazuh → DFIR-IRIS integration
 │       (Python script to create IRIS cases)
 │
-├── dashboards/
-│   └── wazuh_pie_severity.ndjson      # Kibana/Opensearch dashboard
 │
 └── README.md
 ```
